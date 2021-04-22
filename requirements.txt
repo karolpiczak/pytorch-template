@@ -1,0 +1,8 @@
+git+https://github.com/romesco/hydra-lightning/#subdirectory=hydra-configs-pytorch-lightning
+hydra-core==1.1.0.dev5
+git+https://github.com/pytorch/hydra-torch
+pytorch-lightning-bolts==0.3.2
+pytorch-lightning==1.2.8
+
+--index-url https://pypi.python.org/simple/
+-e .
