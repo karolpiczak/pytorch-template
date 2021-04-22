@@ -2,6 +2,8 @@
 Szablon kodu do uczenia sieci neuronowej w PyTorch Lightning
 ************************************************************
 
+Przykład uczenia prostej sieci splotowej do klasyfikacji obrazów ze zbioru `Fashion-MNIST <https://github.com/zalandoresearch/fashion-mnist>`_.
+
 Cechy
 -----
 
