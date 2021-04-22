@@ -5,25 +5,14 @@ Szablon kodu do uczenia sieci neuronowej w PyTorch Lightning
 Cechy
 -----
 
-* Organizacja kodu za pomocą PyTorch Lightning.
-* Wczytywanie danych za pomocą `datamodules` z PyTorch Lightning Bolts.
-* Konfiguracja eksperymentów za pomocą pakietu Hydra.
-* Wizualizacja metryk za pomocą loggera Weights & Biases (wandb.ai).
+* Organizacja kodu za pomocą `PyTorch Lightning <https://pytorch-lightning.readthedocs.io/en/latest/>`_.
+* Wczytywanie danych za pomocą `datamodules` z `PyTorch Lightning Bolts <https://lightning-bolts.readthedocs.io/en/latest/>`_.
+* Konfiguracja eksperymentów za pomocą pakietu `Hydra <https://hydra.cc/docs/next/tutorials/intro/>`_.
+* Wizualizacja metryk za pomocą `Weights & Biases (wandb.ai) <https://docs.wandb.ai/>`_.
 * Możliwość przechowywania checkpointów jako artefakty w wandb.ai.
-* Formatowanie logów/konsoli za pomocą pakietu `rich`.
+* Formatowanie logów/informacji w konsoli za pomocą pakietu `rich <https://github.com/willmcgugan/rich>`_.
 * Adnotacje typowania dla większości kodu.
 * Zgodność z Python 3.9.
-
-
-Linki
------
-
-* https://pytorch-lightning.readthedocs.io/en/latest/
-* https://lightning-bolts.readthedocs.io/en/latest/
-* https://hydra.cc/docs/next/tutorials/intro/
-* https://docs.wandb.ai/
-* https://github.com/willmcgugan/rich
-
 
 Instalacja
 ----------
@@ -33,21 +22,21 @@ Po sklonowaniu repozytorium tworzenie środowiska conda::
     $ conda env create -f environment.yml
     $ conda activate zzsn
 
-Konfiguracja środowiska w pliku `.env` po utworzeniu konta na wandb.ai::
+Konfiguracja środowiska w pliku ``.env`` po utworzeniu konta na wandb.ai::
 
     DATA_DIR=datasets
     RESULTS_DIR=results
     WANDB_ENTITY=WANDB_LOGIN
     WANDB_PROJECT=WANDB_PROJECT_NAME
 
-`DATA_DIR` jest katalogiem nadrzędnym do przechowywania zbiorów danych.
-`RESULTS_DIR` jest katalogiem nadrzędnym dla katalogów roboczych.
+``DATA_DIR`` jest katalogiem nadrzędnym do przechowywania zbiorów danych.
+``RESULTS_DIR`` jest katalogiem nadrzędnym dla katalogów roboczych.
 
 
 Uruchamianie eksperymentów
 --------------------------
 
-Uruchomienie uczenia z katalogu głównego (plik `.env` musi znaleźć się na ścieżce wyszukiwania)::
+Uruchomienie uczenia z katalogu głównego (plik ``.env`` musi znaleźć się na ścieżce wyszukiwania)::
 
     $ python -m zzsn2021.main
 
@@ -60,12 +49,12 @@ Zmiana pojedynczych ustawień::
     $ python -m zzsn2021.main pl.max_epochs=150 experiment.batch_size=64
 
 Zmiana całościowych ustawień eksperymentu na podstawie pliku YAML
-(np. `src/zzsn2021/configs/experiment/fashion.yaml`)::
+(np. ``src/zzsn2021/configs/experiment/fashion.yaml``)::
 
     $ python -m zzsn2021.main experiment=fashion
 
-*Pliki YAML są walidowane przez schematy definiowane jako `OmegaConf structured config <https://omegaconf.readthedocs.io/en/latest/structured_config.html>`_
-(np. `src/zzsn2021/configs/experiment/__init__.py`).*
+Pliki YAML są walidowane przez schematy definiowane jako `OmegaConf structured config <https://omegaconf.readthedocs.io/en/latest/structured_config.html>`_
+(np. ``src/zzsn2021/configs/experiment/__init__.py``).
 
 Wyłączenie przesyłania danych do *wandb*::
 
